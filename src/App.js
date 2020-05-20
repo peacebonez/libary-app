@@ -29,7 +29,8 @@ export default function App() {
     setIsError(false);
     setIsLoading(true);
     let results = await Axios.get(url);
-    console.log("results:", results);
+    // console.log("results:", results);
+    console.log(results.data.totalItems);
     if (results.data.totalItems === 0) {
       setIsLoading(false);
       setIsError(true);
@@ -41,7 +42,7 @@ export default function App() {
     }
   };
 
-  console.log("library:", library);
+  // console.log("library:", library);
   return (
     <div className="container">
       <Heading
@@ -49,8 +50,11 @@ export default function App() {
         handleQuery={handleQuery}
         handleSubmit={handleSubmit}
       />
+      {isLoading && <ReactLoading type="spin" color="#2c4b58" />}
+      {isError && <Error />}
+      <BookContainer library={library} />
 
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="loader">
           <ReactLoading type="spin" color="#2c4b58" />
         </div>
@@ -58,7 +62,7 @@ export default function App() {
         <Error />
       ) : (
         <BookContainer library={library} />
-      )}
+      )} */}
     </div>
   );
 }

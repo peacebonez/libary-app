@@ -11,13 +11,15 @@ export default function BookCard({ book }) {
       infoLink,
     },
   } = book;
+
+  console.log("imageLinks,", imageLinks);
   return (
     <div className="book-card">
       <div className="card-title-container">
         <h1>{title}</h1>
       </div>
       <div className="card-image-list-container">
-        <img src={imageLinks.thumbnail} alt="book" />
+        <img src={imageLinks ? imageLinks.thumbnail : null} alt={title} />
 
         <ul>
           <li>
