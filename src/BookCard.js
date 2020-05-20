@@ -21,27 +21,25 @@ export default function BookCard({ book }) {
 
         <ul>
           <li>
-            <b>
-              Author:{" "}
-              {authors
-                ? authors.length > 1
-                  ? authors.join(", ")
-                  : authors
-                : null}{" "}
-            </b>
+            <b>Author:</b>{" "}
+            {authors
+              ? authors.length > 1
+                ? authors.join(", ")
+                : authors
+              : null}{" "}
           </li>
           <li>
-            <b>Published: {publishedDate}</b>
+            <b>Published:</b> {publishedDate}
           </li>
           <li>
-            <b>Categories: {categories}</b>
-          </li>
-          <li>
-            <a href={infoLink} target="_blank">
-              <button>More Info</button>
-            </a>
+            <b>Categories:</b> {categories}
           </li>
         </ul>
+      </div>
+      <div className="btn-container">
+        <a href={infoLink} target="_blank">
+          <button>More Info</button>
+        </a>
       </div>
     </div>
   );
