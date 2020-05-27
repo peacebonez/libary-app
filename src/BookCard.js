@@ -39,7 +39,7 @@ export default function BookCard({ book }) {
         </ul>
       </div>
       <div className="btn-container">
-        <a href={infoLink} target="_blank">
+        <a href={infoLink} target="_blank" rel="noopener noreferrer">
           <button>More Info</button>
         </a>
       </div>
